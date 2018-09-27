@@ -5,7 +5,6 @@ import Noticias from './components/Noticias';
 import Formulario from './components/Formulario';
 
 class App extends Component {
-
   state = {
     noticias: []
   }
@@ -14,11 +13,10 @@ class App extends Component {
     this.consultarNoticias();
   }
 
-  consultarNoticias = (categoria) => {
+  consultarNoticias = (categoria = 'general') => {
 
-    console.log(categoria);
     let pais = 'CO';
-    let url = `https://newsapi.org/v2/top-headlines?country=${pais}&category=business&apiKey=5099b2a1a18e40ceab56b16da3aa8ac3`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${pais}&category=${categoria}&apiKey=5099b2a1a18e40ceab56b16da3aa8ac3`;
 
     fetch(url)
       .then(respuesta => {
