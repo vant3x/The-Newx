@@ -1,14 +1,24 @@
 import React from 'react';
 
 class Formulario extends React.Component {
+
+  categoriaRef = React.createRef();
+
+  changeCategory = (e) => {
+    e.preventDefault();
+
+    // enviar por props
+    this.props.consultarNoticias(this.categoriaRef.current.value);
+  }
+
   render() {
     return (
       <div className="buscador row">
         <div className="col s12 m8 offset-m2">
-          <form>
+          <form onSubmit={this.changeCategory}>
             <h2>Noticias por Categoría</h2>
             <div className="input-field col s12 m8">
-              <select>
+              <select ref={this.categoriaRef}>
                 <option value="general" defaultValue>General</option>
                 <option value="business">Negocios</option>
                 <option value="entertaiment">Entretenimiento</option>

@@ -14,7 +14,9 @@ class App extends Component {
     this.consultarNoticias();
   }
 
-  consultarNoticias = () => {
+  consultarNoticias = (categoria) => {
+
+    console.log(categoria);
     let pais = 'CO';
     let url = `https://newsapi.org/v2/top-headlines?country=${pais}&category=business&apiKey=5099b2a1a18e40ceab56b16da3aa8ac3`;
 
@@ -26,7 +28,7 @@ class App extends Component {
         this.setState({
           noticias : noticias.articles
         })
-      } )
+      })
   }
 
   render() {
@@ -36,7 +38,9 @@ class App extends Component {
           titulo="The Newx"
         />
         <div className="container white contenedor-noticias">
-          <Formulario />
+          <Formulario
+            consultarNoticias={this.consultarNoticias}
+          />
           <Noticias 
             noticias = {this.state.noticias}
           /> 

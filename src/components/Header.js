@@ -6,7 +6,7 @@ const Header = (props) => {
       <div className="nav-wrapper light-blue darken-2 ">
           <a href="" 
             className="brand-logo titulo center"
-            ><i class="fas fa-newspaper icon"></i> {props.titulo} </a>
+            ><i className="fas fa-newspaper icon"></i> {props.titulo} </a>
       </div>
     </nav>
   );
