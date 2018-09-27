@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 // components
 import Header from './components/Header';
 import Noticias from './components/Noticias';
+import Formulario from './components/Formulario';
+
 class App extends Component {
 
   state = {
@@ -34,6 +36,7 @@ class App extends Component {
           titulo="The Newx"
         />
         <div className="container white contenedor-noticias">
+          <Formulario />
           <Noticias 
             noticias = {this.state.noticias}
           /> 
