@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // components
 import Header from './components/Header';
-
+import Noticias from './components/Noticias';
 class App extends Component {
 
   state = {
@@ -30,10 +30,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="contenedor-app">
         <Header
           titulo="The Newx"
         />
+        <div className="container white contenedor-noticias">
+          <Noticias 
+            noticias = {this.state.noticias}
+          /> 
+
+        </div>
       </div>
     );
   }
