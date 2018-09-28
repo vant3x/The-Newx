@@ -1,5 +1,6 @@
 import React from 'react';
 import Noticia from './Noticia';
+import PropTypes from 'prop-types';
 
 class Noticias extends React.Component {
   
@@ -15,6 +16,10 @@ class Noticias extends React.Component {
       </div>
     );
   }
+}
+
+Noticias.propTypes = {
+  noticias: PropTypes.array.isRequired
 }
 
 export default Noticias;
